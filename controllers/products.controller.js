@@ -45,9 +45,9 @@ const getProduct = async (req, res) => {
             if(product) {
                 return res.json({ product });
             }
-            return res.status(404).json({ success: false, message: "Cannot find product" });
+            return res.status(404).json({ success: false, message: "Cannot find product. Not Found error." });
         }
-        return res.status(400).json({ success: false, message: "Bad Request. Invalid product id provided." });
+        return res.status(400).json({ success: false, message: "Invalid product id provided. Bad request error." });
     } catch (err) {
         return res.status(500).json({ success: false, message: err.message });
     }

@@ -45,10 +45,10 @@ const getProductCategory = async (req, res) => {
             if(category) {
                 return res.json({ category });
             }
-            return res.status(404).json({ success: false, message: "Cannot find product category" });
+            return res.status(404).json({ success: false, message: "Cannot find product category. Not Found error." });
         }
 
-        return res.status(400).json({ success: false, message: "Bad Request. Invalid product category id provided." });
+        return res.status(400).json({ success: false, message: "Invalid product category id provided. Bad Request error." });
     } catch (err) {
         return res.status(500).json({ success: false, message: err.message });
     }
