@@ -5,5 +5,4 @@ BlueKart is an E-Commerce website for everything Blue. It is a one-stop place fo
 This repository contains the Back-End code for BlueKart.
 
 ## Live
-
 [BlueKart-BackEnd](http://bluekart-back-end.vercel.app/)
