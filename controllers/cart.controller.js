@@ -67,7 +67,8 @@ const addItemToCartHandler = async (req, res) => {
         userCart.push({
             ...product,
             createdAt: new Date(new Date().toISOString()),
-            updatedAt: new Date(new Date().toISOString())
+            updatedAt: new Date(new Date().toISOString()),
+            qty: 1
         });
         const updatedUser = await User.updateOne({ _id: userId}, { cart: userCart });
 
