@@ -1,16 +1,19 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 const { connectDB } = require("./db/db.connect");
 const { productsRouter } = require("./routes/products.route");
 const { productCategoryRouter } = require("./routes/categories.route");
 const { authRouter } = require("./routes/auth.route");
 const { userRouter } = require("./routes/user.route");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config();
 
 app.use(express.json());
+app.use(cors());
+
+const port = process.env.PORT || 3000;
 
 connectDB();
 

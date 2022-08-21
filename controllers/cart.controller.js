@@ -122,6 +122,7 @@ const removeItemFromCartHandler = async (req, res) => {
  *  @apiName POST Update Cart item
  *  @desc Update an item in cart
  *  @route /api/user/cart/:productId
+ *  @param {string} productId Unique identifier for the specified product
  *  @apiReqBody {action} body should contain {action} (whose 'type' can be increment or decrement)
  *  @returns {Product[]} A list of all products in cart
  */
