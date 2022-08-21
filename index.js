@@ -5,6 +5,7 @@ const { connectDB } = require("./db/db.connect");
 const { productsRouter } = require("./routes/products.route");
 const { productCategoryRouter } = require("./routes/categories.route");
 const { authRouter } = require("./routes/auth.route");
+const { userRouter } = require("./routes/user.route");
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 app.use("/api/products", productsRouter);
 app.use("/api/categories", productCategoryRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
 app.use(function (req, res) {
 	res.status(404).json({ message: "404 route not found!" });

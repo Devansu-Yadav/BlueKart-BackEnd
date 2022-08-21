@@ -5,11 +5,9 @@ const authVerify = (req, res, next) => {
 
     if (token) {
         token = token.split(" ")[1];
-        console.log(token);
         
         try {
             const decoded = getDecodedDataFromToken(token);
-            console.log(decoded);
     
             req.user = { _id: decoded._id };
             return next();
