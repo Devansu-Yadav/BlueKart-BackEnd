@@ -1,5 +1,4 @@
 const { User } = require("../models/users.model");
-const mongoose = require("mongoose");
 
 /**
  *  Private accessible routes for User account.

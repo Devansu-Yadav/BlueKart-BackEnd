@@ -1,5 +1,4 @@
 const { User } = require("../models/users.model");
-const mongoose = require("mongoose");
 const mongo = require("mongodb");
 const { getEncodedToken, getHashedPassword, isValidPassword } = require("../helpers/authUtils");
 
