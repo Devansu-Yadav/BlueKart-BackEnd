@@ -3,7 +3,7 @@ const userRouter = express.Router();
 const { authVerify } = require("../middlewares/authVerify");
 const { getWishListHandler, addItemToWishlistHandler, removeItemFromWishlistHandler } = require("../controllers/wishlist.controller");
 const { getCartHandler, addItemToCartHandler, updateCartItemsHandler, removeItemFromCartHandler } = require("../controllers/cart.controller");
-const { getUserAccountData } = require("../controllers/userAccount.controller");
+const { getUserAccountData, updateUserAccountData } = require("../controllers/userAccount.controller");
 const { getAddressHandler, addAddressHandler, removeAddressHandler, updateAddressHandler } = require("../controllers/userAddress.controller");
 
 // routes related to user's wishlist
@@ -25,7 +25,8 @@ userRouter.route("/cart/:productId")
 
 // routes related to user's account
 userRouter.route("/account")
-    .get(authVerify, getUserAccountData);
+    .get(authVerify, getUserAccountData)
+    .post(authVerify, updateUserAccountData);
 
 userRouter.route("/account/addresses")
     .get(authVerify, getAddressHandler)
